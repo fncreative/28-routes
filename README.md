@@ -3,7 +3,7 @@
 This is a simple react app for adding notes through a form field.
 
 ## State map
-![state image](assets/state-map.jpg)
+![state image](assets/state-map.jpeg)
 
 ## Getting Started
 
