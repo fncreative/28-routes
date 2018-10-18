@@ -1,56 +1,51 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 28: To Do
-===
+# React Search
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-	* Attach a picture of your state/props map
+This is a simple react app for adding notes through a form field.
 
-## Requirements  
- 
-#### Feature Tasks 
-Create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteCreateForm
-    NoteList
-      Noteitem (Optional)
+## State map
+![state image](assets/state-map.jpg)
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+You must have NodeJS installed along with either NPM or Yarn.
+
+### Installing
+
+Copy the link from the github repository
+In the command line, navigate to the parent directory where you want to store this project
+In the command line, type:
 ```
-###### App Component
-* The App component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+git clone <repository url>
+```
+Once the project files are there, type:
+```
+npm install
+```
+or
+```
+yarn i
+```
 
-###### Landing Component
-* The Landing component should display a brief description of the notes app
+## Built With
 
-###### Dashboard Component 
-* The Dashboard component should manage the entire **application state**
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that gets added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `editing`: false by default
-    * `completed`: false by default
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
+* [NodeJS](https://nodejs.org) - The javascript runtime used
+* [Eslint](https://eslint.org/) - Coding style linter
+* [Faker](https://www.npmjs.com/package/faker) - A useful package for generating fake test data
+* [React](https://reactjs.org/) - A dynamic web application framework
+* [Babel](https://babeljs.io/) - A javascript compiler
+* [Webpack](https://webpack.js.org/) - A robust bundling tool
+* [Cowsay](https://www.npmjs.com/package/cowsay) - A fun caw generator
+* [Superagent](https://visionmedia.github.io/superagent/) - AJAX with less suck!
 
-###### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
 
-###### NoteList Component 
-* should display an unordered list of NoteItem components
+## Authors
 
-###### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
+* [**Daniel Frey**](http://github.com/fncreative)
 
-#### Documentation  
-Write a description of the project in your README.md
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
