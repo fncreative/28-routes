@@ -6,10 +6,6 @@ import Dashboard from '../dashboard/dashboard';
 import Landing from '../landing/landing';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
     <main>
@@ -30,4 +26,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
