@@ -1,7 +1,7 @@
 import React from 'react';
 import NoteForm from "../note-form/note-form";
 import uuid from 'uuid/v4';
-import NoteItem from '../note-item/note-item';
+import NoteList from '../note-list/note-list';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -11,20 +11,20 @@ class Dashboard extends React.Component {
     this.state.notes = [];
   }
 
-  renderNotes = () => {
-    return (
-      <ul>
-        {
-          this.state.notes.map((currentNote) => {
-            return <NoteItem
-              note={currentNote}
-              handleRemoveNote = {this.handleRemoveNote}
-              />
-          })
-        }
-      </ul>
-    );
-  };
+  // renderNotes = () => {
+  //   return (
+  //     <ul>
+  //       {
+  //         this.state.notes.map((currentNote) => {
+  //           return <NoteItem
+  //             note={currentNote}
+  //             handleRemoveNote = {this.handleRemoveNote}
+  //             />
+  //         })
+  //       }
+  //     </ul>
+  //   );
+  // };
 
   handleRemoveNote = (noteToRemove) => {
     this.setState((previousState) => ({
@@ -42,6 +42,18 @@ class Dashboard extends React.Component {
     });
   };
 
+  handleUpdateNote = (noteToUpdate) => {
+    return this.setState((previousState) => {
+      return { notes: previousState.notes.map((currentNote) => {
+          if (currentNote.id === noteToUpdate.id) {
+            currentNote = noteToUpdate;
+          }
+          return currentNote;
+        }),
+      }
+    });
+  };
+
   render() {
     return (
       <section>
@@ -49,7 +61,11 @@ class Dashboard extends React.Component {
         <p>Add New Note</p>
         <NoteForm handleComplete={this.handleAddNote}/>
         <p>Here is a list of your notes:</p>
-        {this.renderNotes()}
+        {/*{this.renderNotes()}*/}
+        <NoteList
+          notes = {this.state.notes}
+          handleRemoveNote = {this.handleRemoveNote}
+          handleComplete = {this.handleUpdateNote} />
       </section>
     );
   }
